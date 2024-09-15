@@ -1,0 +1,12 @@
+<!--<odoo>-->
+<!--    <data noupdate="1">-->
+<!--        &lt;!&ndash; Security Groups &ndash;&gt;-->
+<!--        <record id="group_employee_user" model="res.groups">-->
+<!--            <field name="name">Employee User</field>-->
+<!--        </record>-->
+
+<!--        <record id="group_employee_manager" model="res.groups">-->
+<!--            <field name="name">Employee Manager</field>-->
+<!--        </record>-->
+<!--    </data>-->
+<!--</odoo>-->

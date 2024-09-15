@@ -1,0 +1,34 @@
+<odoo>
+    <record id="view_city_tree" model="ir.ui.view">
+        <field name="name">res.city.ksc.tree</field>
+        <field name="model">res.city.ksc</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+                <field name="state_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_city_search" model="ir.ui.view">
+        <field name="name">res.city.ksc.search</field>
+        <field name="model">res.city.ksc</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="state_id"/>
+                <group expand="1" string="Group By">
+                    <filter name="group_by_state" string="State" context="{'group_by': 'state_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_city" model="ir.actions.act_window">
+        <field name="name">City</field>
+        <field name="res_model">res.city.ksc</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="menu_city_action" parent="menu_city" action="action_city"/>
+</odoo>

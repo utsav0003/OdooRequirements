@@ -1,0 +1,76 @@
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="view_crm_lead_ksc_tree" model="ir.ui.view">
+            <field name="name">crm.lead.ksc.tree</field>
+            <field name="model">crm.lead.ksc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="customer_name"/>
+                    <field name="customer_email"/>
+                    <field name="customer_phone"/>
+                    <field name="channel"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_crm_lead_ksc_form" model="ir.ui.view">
+            <field name="name">crm.lead.ksc.form</field>
+            <field name="model">crm.lead.ksc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="state" widget="statusbar" options="{'clickable': True}"/>
+                            <field name="customer_name"/>
+                            <field name="customer_email"/>
+                            <field name="customer_phone"/>
+                            <field name="expected_revenue"/>
+                            <field name="salesperson"/>
+                            <field name="sales_team"/>
+                            <field name="campaign"/>
+                            <field name="channel"/>
+                            <field name="next_follow_up_date"/>
+                            <field name="won_date"/>
+                            <field name="lost_reason"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="view_crm_lead_ksc_search" model="ir.ui.view">
+            <field name="name">crm.lead.ksc.search</field>
+            <field name="model">crm.lead.ksc</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="customer_name"/>
+                    <field name="customer_email"/>
+                    <field name="customer_phone"/>
+
+                    <!-- Filter for today -->
+                    <filter string="Today's Follow-ups" name="today_follow_ups" domain="[('next_follow_up_date', '=', context_today())]"/>
+                    <group>
+                        <filter string="Channel" name="channel" context="{'group_by': 'channel'}"/>
+                    </group>
+                    <!-- Group by options -->
+<!--                    <group string="Channel" name="group_by_channel" context="{'group_by': 'channel'}"/>-->
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_crm_lead_ksc" model="ir.actions.act_window">
+            <field name="name">CRM Leads</field>
+            <field name="res_model">crm.lead.ksc</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu Items -->
+        <menuitem id="menu_crm_lead_ksc_root" name="CRM Leads" sequence="5"/>
+        <menuitem id="menu_crm_lead_ksc" name="CRM Leads" parent="menu_crm_lead_ksc_root" action="action_crm_lead_ksc"/>
+    </data>
+</odoo>

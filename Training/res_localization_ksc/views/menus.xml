@@ -1,0 +1,8 @@
+<odoo>
+    <menuitem id="menu_localization_root" name="Localization"/>
+    <menuitem id="menu_localization" name="Localization" parent="menu_localization_root"/>
+
+    <menuitem id="menu_country" name="Countries" parent="menu_localization"/>
+    <menuitem id="menu_state" name="States" parent="menu_localization"/>
+    <menuitem id="menu_city" name="City" parent="menu_localization"/>
+</odoo>

@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <record id="group_country_manager" model="res.groups">
+            <field name="name">Country Manager</field>
+        </record>
+    </data>
+</odoo>

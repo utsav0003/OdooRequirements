@@ -1,0 +1,10 @@
+<odoo>
+    <record id="uom_category_demo" model="product.uom.category.ksc">
+        <field name="name">Units of Measure</field>
+    </record>
+
+    <record id="uom_demo" model="product.uom.ksc">
+        <field name="name">Unit</field>
+        <field name="uom_category_id" ref="uom_category_demo"/>
+    </record>
+</odoo>

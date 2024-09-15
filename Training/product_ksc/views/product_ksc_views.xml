@@ -1,0 +1,69 @@
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="view_product_ksc_tree" model="ir.ui.view">
+            <field name="name">product.ksc.tree</field>
+            <field name="model">product.ksc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="sku"/>
+                    <field name="barcode"/>
+                    <field name="product_type"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_product_ksc_form" model="ir.ui.view">
+            <field name="name">product.ksc.form</field>
+            <field name="model">product.ksc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="sku"/>
+                            <field name="barcode"/>
+                            <field name="can_be_sold"/>
+                            <field name="product_type"/>
+                            <field name="sale_price"/>
+                            <field name="cost_price"/>
+                            <field name="active"/>
+                            <field name="warehouse"/>
+                            <field name="product_image"/>
+                            <field name="website_description"/>
+                            <field name="internal_note"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="view_product_ksc_search" model="ir.ui.view">
+            <field name="name">product.ksc.search</field>
+            <field name="model">product.ksc</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="sku"/>
+                    <field name="barcode"/>
+                    <field name="can_be_sold"/>
+                    <field name="product_type"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_product_ksc" model="ir.actions.act_window">
+            <field name="name">Products</field>
+            <field name="res_model">product.ksc</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu Items -->
+        <menuitem id="menu_product_ksc_root" name="Products" sequence="1"/>
+        <menuitem id="menu_product_ksc" name="Products" parent="menu_product_ksc_root" action="action_product_ksc"/>
+    </data>
+</odoo>

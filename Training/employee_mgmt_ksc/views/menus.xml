@@ -1,0 +1,9 @@
+<odoo>
+    <menuitem id="menu_hr_root" name="HR"/>
+    <menuitem id="menu_hr_employees" name="Employees" parent="menu_hr_root"/>
+
+    <menuitem id="menu_department" name="Departments" parent="menu_hr_employees"/>
+    <menuitem id="menu_employee_shifts" name="Employee Shifts" parent="menu_hr_employees"/>
+    <menuitem id="menu_employee" name="Employees" parent="menu_hr_employees"/>
+    <menuitem id="menu_employee_leaves" name="Leaves" parent="menu_hr_employees"/>
+</odoo>

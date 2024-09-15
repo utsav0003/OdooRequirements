@@ -1,0 +1,9 @@
+<odoo>
+    <record id="base_res_partner_demo" model="res.partner.ksc">
+        <field name="name">Demo Customer</field>
+        <field name="email">demo@example.com</field>
+        <field name="active" eval="True"/>
+        <field name="country_id" ref="base.us"/>
+        <field name="state_id" ref="base.state_us_california"/>
+    </record>
+</odoo>

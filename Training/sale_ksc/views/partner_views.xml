@@ -1,0 +1,51 @@
+<odoo>
+    <menuitem id="menu_customers" name="Customers" parent="sale_ksc.menu_my_sales_sales"/>
+
+    <record id="view_partner_tree" model="ir.ui.view">
+        <field name="name">res.partner.ksc.tree</field>
+        <field name="model">res.partner.ksc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="country_id"/>
+                <field name="state_id"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.ksc.form</field>
+        <field name="model">res.partner.ksc</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="street1"/>
+                        <field name="street2"/>
+                        <field name="country_id"/>
+                        <field name="state_id"/>
+                        <field name="city_id"/>
+                        <field name="zip"/>
+                        <field name="email"/>
+                        <field name="mobile"/>
+                        <field name="phone"/>
+                        <field name="photo"/>
+                        <field name="website"/>
+                        <field name="active"/>
+                        <field name="parent_id"/>
+                        <field name="address_type" attrs="{'invisible': [('parent_id', '=', False)]}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_partners" model="ir.actions.act_window">
+        <field name="name">Customers</field>
+        <field name="res_model">res.partner.ksc</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_partner_tree"/>
+    </record>
+</odoo>

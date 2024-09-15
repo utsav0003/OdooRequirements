@@ -1,0 +1,43 @@
+<odoo>
+    <menuitem id="menu_orders" name="Orders" parent="sale_ksc.menu_my_sales_sales"/>
+
+    <record id="view_sale_order_tree" model="ir.ui.view">
+        <field name="name">sale.order.ksc.tree</field>
+        <field name="model">sale.order.ksc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="customer_id"/>
+                <field name="sale_order_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_sale_order_form" model="ir.ui.view">
+        <field name="name">sale.order.ksc.form</field>
+        <field name="model">sale.order.ksc</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="customer_id"/>
+                        <field name="invoice_customer_id"/>
+                        <field name="shipping_customer_id"/>
+                        <field name="sale_order_date"/>
+                        <field name="order_line_ids"/>
+                        <field name="salesperson_id"/>
+                        <field name="state"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sale_order" model="ir.actions.act_window">
+        <field name="name">Sale Orders</field>
+        <field name="res_model">sale.order.ksc</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_sale_order_tree"/>
+    </record>
+</odoo>

@@ -1,0 +1,33 @@
+<odoo>
+    <!-- Tree View for Shifts -->
+    <record id="view_shift_tree" model="ir.ui.view">
+        <field name="name">employee.department.shift.ksc.tree</field>
+        <field name="model">employee.department.shift.ksc</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="shift"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search View for Shifts -->
+    <record id="view_shift_search" model="ir.ui.view">
+        <field name="name">employee.department.shift.ksc.search</field>
+        <field name="model">employee.department.shift.ksc</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="shift"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action for Shifts -->
+    <record id="action_shift" model="ir.actions.act_window">
+        <field name="name">Employee Shifts</field>
+        <field name="res_model">employee.department.shift.ksc</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <!-- Menu for Shifts -->
+    <menuitem id="menu_shift_action" parent="menu_employee_shifts" action="action_shift"/>
+</odoo>

@@ -1,0 +1,10 @@
+ <record id="partner_demo_1" model="res.partner.demo1">
+        <field name="name">John Doe</field>
+        <field name="email">john@example.com</field>
+        <field name="city">New York</field>
+        <field name="state">NY</field>
+        <field name="zip_code">10001</field>
+        <field name="country">USA</field>
+        <field name="gender">male</field>
+        <field name="is_spectacles">True</field>
+    </record>

@@ -1,0 +1,9 @@
+<odoo>
+    <record id="product_demo_1" model="product.ksc">
+        <field name="name">Demo Product 1</field>
+        <field name="sku">DP1</field>
+        <field name="product_type">storable</field>
+        <field name="sale_price">10.00</field>
+        <field name="cost_price">5.00</field>
+    </record>
+</odoo>

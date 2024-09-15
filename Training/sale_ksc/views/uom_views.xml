@@ -1,0 +1,35 @@
+<odoo>
+    <menuitem id="menu_uom" name="Units of Measure" parent="sale_ksc.menu_my_sales_sales"/>
+
+    <record id="view_uom_tree" model="ir.ui.view">
+        <field name="name">product.uom.ksc.tree</field>
+        <field name="model">product.uom.ksc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_uom_form" model="ir.ui.view">
+        <field name="name">product.uom.ksc.form</field>
+        <field name="model">product.uom.ksc</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="uom_category_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_uom" model="ir.actions.act_window">
+        <field name="name">Units of Measure</field>
+        <field name="res_model">product.uom.ksc</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_uom_tree"/>
+    </record>
+</odoo>
